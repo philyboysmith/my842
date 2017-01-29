@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tag above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>my.eightfourtwo.com</title>
+    <link href="/bower_components/sass-bootstrap-glyphicons/css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" href="/css/outline.css"></link>
+    <style>
+    .Collapsible__trigger,
+    .Collapsible__contentInner a{
+          background: rgba(255, 255, 255, 0.07);
+          border-top: 0.0625rem solid rgba(197, 197, 197, 0.3);
+          position: relative;
+          display: block;
+          padding: 0.5rem 0.5rem 0.5rem 2rem;
+          cursor:pointer;
+    }
+
+    .Collapsible--empty::after {
+      display:none!important;
+    }
+    .Collapsible--empty.Collapsible__contentInner {
+      display: none;
+    }
+
+    .Collapsible__trigger::before,
+    .Collapsible__trigger::after{
+      content: "\e118";
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      position: absolute;
+      left: 0.5rem;
+    }
+    .Collapsible__trigger::after{
+      content:"\002b";
+      left: auto;
+      right: 0.5rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .headshot {
+      padding: 1rem 1rem;
+    }
+    .avatar {
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .table-estate tr {
+
+    }
+    .table-estate th:first-child {
+      font-size: 0;
+    }
+.table-estate th:not(:first-child),
+.table-estate td:not(:first-child){
+  width: 200px;
+}
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.ReactTabs__TabPanel {
+  padding: 0.5em 1rem 0.25em;
+}
+
+.ReactTabs__Tab span{
+    margin-right: 2px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    padding: .275rem 1rem;
+    display: block;
+    color: #9d9d9c;
+    cursor: pointer;
+}
+.ReactTabs__Tab--selected span {
+  background: rgba(255, 255, 255, 0.07);
+    color: #d2d2d2;
+}
+
+.form-control, select.input-transparent {
+  height: auto;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+  </body>
+</html>

@@ -1,0 +1,302 @@
+/**
+ * Some Basics
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.hidden-print {
+  display: none; }
+
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url("../webfonts/GothamHTF-Light.otf"); }
+
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url("../webfonts/GothamHTF-Book.otf"); }
+
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url("../webfonts/GothamHTF-Medium.otf"); }
+
+@page {
+  size: A4 landscape;
+  margin: 2cm;
+  padding: 0;
+  margin-top: 0.8in;
+  margin-bottom: 0.6in; }
+
+@page {
+  background-image: url(http://admin.eightfourtwo.com/images/eightfourtwo_black.png);
+  background-size: 166px 33px;
+  background-repeat: no-repeat;
+  background-position: 24cm 0.7cm;
+  @bottom-right {
+    color: #9c9d9a;
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: 'Gotham-Light';
+    font-size: 12px;
+    padding-right: 0; }
+  @bottom-left {
+    color: #9c9d9a;
+    font-family: 'Gotham-Light';
+    font-size: 12px;
+    padding-left: 0; } }
+
+@page :first {
+  background-size: 199px 43px;
+  background-position: 22cm 1.5cm;
+  @bottom-right {
+    content: ""; }
+  @bottom-left {
+    content: ""; } }
+
+#first-page {
+  color: #000000; }
+  #first-page > div {
+    float: left;
+    padding-left: 1cm; }
+  #first-page h2 {
+    font-family: 'Gotham-Book';
+    border-bottom: 0;
+    color: #000000;
+    border-top: 1px solid #000000; }
+  #first-page h2 span {
+    font-family: 'Gotham-Light'; }
+
+body {
+  font-family: 'Gotham-Light';
+  font-size: 8pt;
+  line-height: 1.3; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+.break-after {
+  page-break-after: always; }
+  .break-after .break-after:last-child {
+    page-break-after: avoid; }
+  .break-after h2 {
+    margin-bottom: 16px; }
+
+/**
+ * Typography
+ */
+h2 {
+  font-size: 23pt;
+  color: #9c9d9a;
+  border-bottom: 1px solid #9c9d9a;
+  margin-bottom: 48px;
+  margin-top: 16px; }
+
+h2.bottomless {
+  margin-bottom: 16px; }
+
+h3 {
+  font-size: 14pt;
+  color: #9c9d9a;
+  margin-bottom: 8px; }
+
+h3.bottomless {
+  margin-bottom: 2px; }
+
+hr {
+  border-bottom: 1px solid #9c9d9a; }
+
+.notes-title,
+legend {
+  font-family: 'Gotham-Medium';
+  color: #9c9d9a; }
+
+.notes-wrapper {
+  margin-bottom: 12px; }
+
+/**
+ * Forms
+ */
+form {
+  margin-bottom: 12px; }
+
+h3 {
+  margin-top: 8px; }
+
+.breadcrumb,
+.picker,
+button, .btn,
+.select2,
+.lookup-field-wrapper.form-group,
+input[type="hidden"] {
+  display: none !important; }
+
+.form-group {
+  width: 100%;
+  clear: both;
+  margin-bottom: 4px; }
+  .form-group:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .form-group label {
+    width: 40%;
+    color: #9c9d9a;
+    float: left;
+    padding-right: 1em; }
+  .form-group > div {
+    width: 55%;
+    float: left; }
+    .form-group > div * {
+      display: inline; }
+    .form-group > div button {
+      display: none; }
+  .form-group .form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    color: #000000;
+    background: transparent;
+    font-family: 'Gotham-Light'; }
+  .form-group .help-block {
+    display: none; }
+
+/**
+ * Declaration
+ */
+.declarations h2 {
+  margin-top: 0;
+  margin-bottom: 8px; }
+
+.declarations h3 {
+  margin-bottom: 4px; }
+
+.borderless {
+  margin-bottom: 8px; }
+
+input[type="hidden"] {
+  display: none !important; }
+
+.two-column,
+.two-columns {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 1.5cm;
+  -moz-column-gap: 1.5cm;
+  column-gap: 1.5cm;
+  padding-right: 2cm; }
+
+.declarations .row {
+  margin-bottom: 4px; }
+
+.declarations .borderless td {
+  padding-left: 0;
+  vertical-align: middle;
+  font-size: 8pt; }
+
+.borderless {
+  margin-bottom: 4px; }
+
+.declarations .borderless tbody tr:nth-child(odd) {
+  background-color: transparent; }
+
+.declarations .form-control {
+  background-color: #F1F1F0 !important; }
+
+.declarations .col-sm-4 {
+  width: 33.333333333%;
+  float: left; }
+
+.declarations .col-sm-7 {
+  width: 66%;
+  float: left; }
+
+.declarations h2 {
+  margin-top: 8px;
+  margin-bottom: 8px; }
+
+.declarations .avoid-break {
+  -webkit-column-break-inside: avoid !important;
+  page-break-inside: avoid !important;
+  break-inside: avoid !important; }
+
+.declarations .summary-checkbox {
+  display: inline-block;
+  width: 20px !important;
+  height: 20px !important; }
+
+.declarations .input-transparent {
+  display: block !important;
+  min-height: 20px !important; }
+
+/**
+ * Tables
+ */
+table {
+  width: 100%;
+  margin-bottom: 12px; }
+
+table th,
+table td {
+  padding: 4px;
+  font-size: 9pt; }
+
+table th {
+  font-family: 'Gotham-Medium';
+  border-bottom: 1px solid #9c9d9a;
+  text-align: left; }
+
+table tbody td {
+  padding-bottom: 12px; }
+
+table tbody tr:nth-child(odd) {
+  background-color: #F1F1F0; }
+
+.seperator:last-child {
+  display: none; }
+
+.audit > tbody > tr > td {
+  font-size: 8px !important;
+  padding: 6px !important; }
+
+/*# sourceMappingURL=print.css.map */

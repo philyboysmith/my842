@@ -1,0 +1,37 @@
+{
+  "name": "glyphicons-halflings",
+  "authors": [
+    "Jan Kovarik",
+    "Sebastian Podjasek"
+  ],
+  "description": "GLYPHICONS is a library of precisely prepared monochromatic icons and symbols, created with an emphasis to simplicity and easy orientation.",
+  "main": "css/glyphicons-halflings.css",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "css",
+    "sass",
+    "icons",
+    "fonts"
+  ],
+  "license": "CC-BY-3.0",
+  "homepage": "http://glyphicons.com/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "df545d9e4b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "df545d9e4bdae9b5ffa112fcb70b3f8350929875"
+  },
+  "_source": "https://github.com/InWayOpenSource/glyphicons-halflings.git",
+  "_target": "*",
+  "_originalSource": "glyphicons-halflings",
+  "_direct": true
+}
