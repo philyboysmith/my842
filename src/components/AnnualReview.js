@@ -9,6 +9,7 @@ export default class AnnualReview extends React.Component {
       super(props);
       this.showNotes = this.showNotes.bind(this);
       this.approve = this.approve.bind(this);
+      this.state = { annualReviewData: []};
   }
   showNotes() {
         this.refs.notes.classList.toggle('hidden');
@@ -23,6 +24,9 @@ export default class AnnualReview extends React.Component {
   componentDidMount() {
         this.refs.removeButton.addEventListener('click', this.showNotes);
         this.refs.approveButton.addEventListener('click', this.approve);
+        this.props.fetchAnnualReview(this.props.params.clientID)
+          .then((annualReviewData) => this.setState({ annualReviewData: annualReviewData.response }))
+          .catch(error => console.error(error.message));
     }
 
     componentWillUnmount() {
@@ -39,6 +43,7 @@ export default class AnnualReview extends React.Component {
             <div>
               <h1>Assets and Liability Statement</h1>
               <div>
+                <p>{JSON.stringify(this.state.annualReviewData)}</p>
                 <h2>Properties</h2>
                 <ul className="al_list">
                   <li className="al_list__item">

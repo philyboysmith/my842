@@ -15,6 +15,7 @@ class Main extends React.Component {
 	componentWillMount() {
 		if(location.pathname !== '/' && !this.props.auth.isAuthenticated) browserHistory.push('/');
 		if(this.props.auth.isAuthenticated) {
+					 console.log('Yeah, it was authenticated, course');
 	         this.props.fetchClients().then((clients) =>  {
 	         	console.log('CLIENTS RESPONSE!!!!!!!!', clients);
 	         	if(this.props.params.clientID)  {

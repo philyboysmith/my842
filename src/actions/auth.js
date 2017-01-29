@@ -66,7 +66,7 @@ export function fetchClients() {
 export function fetchAnnualReview(clientId) {
   return {
     [CALL_API]: {
-      endpoint: `clients/${clientId}/annual-review`,
+      endpoint: `clients/${clientId}/annual_review`,
       authenticated: true,
       types: ['ANNUAL_REVIEW_SUCCESS', 'ANNUAL_REVIEW_FAILURE'],
     },
