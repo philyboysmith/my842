@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch';
 import { browserHistory } from 'react-router';
 import { CALL_API } from '../middleware/api';
 
-const BASE_URL = 'http://a2.eightfourtwo.com/api/v1/';
+const BASE_URL = 'http://admin.eightfourtwo.com/api/v1/';
 
 export function resetState() {
   return {
