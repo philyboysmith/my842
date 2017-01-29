@@ -13,7 +13,7 @@ import { resetError } from './actions/auth';
 
 const persistedState = loadState();
 
-const logger = createLogger({}); // no options, but reminding that options are available
+const logger = createLogger({ collapsed: true }); // no options, but reminding that options are available
 
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware, api, logger)(createStore);
 

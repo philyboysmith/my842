@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-const BASE_URL = 'http://a2.eightfourtwo.com/api/v1/';
+const BASE_URL = 'http://admin.eightfourtwo.com/api/v1/';
 
 function callApi(endpoint, authenticated) {
   const token = localStorage.getItem('token') || null;
