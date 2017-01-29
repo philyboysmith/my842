@@ -1,0 +1,78 @@
+{
+  "status": "incomplete",
+  "due_date": "2017-04-01",
+  "assets_and_liabilities": {
+    "properties": [
+      {
+        "uid": "property_102",
+        "id": 102,
+        "title": "20 St Dunstan's Hill",
+        "description": "Commercial property (UK)",
+        "value": 2500000,
+        "approved": false,
+        "notes": null
+      }
+    ],
+    "pensions": [
+      {
+        "uid": "pension_76",
+        "id": 76,
+        "title": "Dentons",
+        "description": "Self-Invested Personal Pension",
+        "value": "857,158",
+        "approved": false,
+        "notes": null
+      }
+    ],
+    "income": {
+      "name": "Business income",
+      "value": "100000",
+      "approved": false,
+      "notes": null
+    },
+    "liquid_assets": [
+      {
+        "uid": "investment_100",
+        "id": 100,
+        "title": "Quilter Cheviot",
+        "description": "General Investment Account",
+        "value": 106270,
+        "approved": false,
+        "notes": null
+      }
+    ],
+    "current-accounts": [
+      {
+        "uid": "saving_104",
+        "id": 104,
+        "title": "HSBC ",
+        "description": "Current account",
+        "value": 25527,
+        "approved": false,
+        "notes": null
+      },
+      {
+        "uid": "saving_105",
+        "id": 105,
+        "title": "HSBC ",
+        "description": "Savings account",
+        "value": 50000,
+        "approved": false,
+        "notes": null
+      }
+    ]
+  },
+  "family_tree": [
+    {
+      "uid": "dependent_107",
+      "id": 107,
+      "name": "Phil Smith",
+      "dob": "1982-04-28",
+      "approved": false,
+      "notes": null
+    }
+  ],
+  "budget_planner": [],
+  "risk_profile": [],
+  "availability": []
+}
