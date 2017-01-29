@@ -43,7 +43,7 @@ export default class AnnualReview extends React.Component {
             <div>
               <h1>Assets and Liability Statement</h1>
               <div>
-                <p>{JSON.stringify(this.state.annualReviewData)}</p>
+                <p>{console.log(this.state.annualReviewData)}</p>
                 <h2>Properties</h2>
                 <ul className="al_list">
                   <li className="al_list__item">
