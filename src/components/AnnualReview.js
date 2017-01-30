@@ -1,7 +1,4 @@
 import React from 'react';
-import Reactable from 'reactable';
-import moment from 'moment';
-import {tick, transformContacts} from '../helpers';
 
 export default class AnnualReview extends React.Component {
 
@@ -34,6 +31,8 @@ export default class AnnualReview extends React.Component {
 
         this.refs.approveButton.removeEventListener('click', this.approve);
     }
+
+
 
 	render() {
 
@@ -155,13 +154,7 @@ export default class AnnualReview extends React.Component {
             </div>
 
           </div>
-            
-
 
         );
-
-
-
-
 	}
-};
+}
