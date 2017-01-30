@@ -1,4 +1,3 @@
-/* eslint-disable */
 import auth from './auth';
 
 describe('Auth reducer', () => {

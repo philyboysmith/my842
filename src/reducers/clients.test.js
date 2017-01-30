@@ -1,4 +1,3 @@
-/* eslint-disable */
 import clients from './clients';
 
 describe('Clients reducer', () => {

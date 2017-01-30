@@ -1,4 +1,3 @@
-/* eslint-disable */
 import team from './team';
 
 describe('Team reducer', () => {
