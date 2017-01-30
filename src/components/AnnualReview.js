@@ -9,7 +9,7 @@ export default class AnnualReview extends React.Component {
       super(props);
       this.showNotes = this.showNotes.bind(this);
       this.approve = this.approve.bind(this);
-      this.state = { annualReviewData: []};
+      this.state = { annualReviewData: [] };
   }
   showNotes() {
         this.refs.notes.classList.toggle('hidden');
