@@ -1,13 +1,18 @@
 import React from 'react';
 
-function FamilyTree(props) {
+function FamilyTree({ data }) {
+  let parsedData = data;
+  if (data.length === 0) {
+    parsedData = 'No Family Tree data';
+  }
   return (
     <div>
-      <h1>Family tree</h1>
+      <h1>Family Tree</h1>
+      <p>{parsedData}</p>
     </div>
   );
 }
 
-Family.propTypes = {};
+FamilyTree.propTypes = {};
 
 export default FamilyTree;

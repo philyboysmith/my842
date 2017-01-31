@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AssetsAndLiabilities(props) {
+function AssetsAndLiabilities({ data }) {
   return (
     <div>
       <h1>Assets and Liability Statement</h1>

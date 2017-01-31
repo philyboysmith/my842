@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import AssetsAndLiabilities from './AssetsAndLiabilities';
 import Availability from './Availability';
@@ -22,4 +23,14 @@ AnnualReview.propTypes = {
   annualReviewResponse: React.PropTypes.object,
 };
 
-export default AnnualReview;
+function mapStateToProps(state) {
+  return {
+    annualReviewResponse: state.annualReview,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return { dispatch };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AnnualReview);

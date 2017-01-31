@@ -22,7 +22,7 @@ import Estates from './components/Estates';
 import Expenditures from './components/Expenditures';
 import Team from './components/Team';
 import Documents from './components/Documents';
-import AnnualReview from './components/AnnualReview';
+import AnnualReview from './components/AnnualReview/AnnualReview';
 
 const denyWithoutAuthentication = () => {
   if (!store.getState().auth.isAuthenticated && localStorage.getItem('token')) {
