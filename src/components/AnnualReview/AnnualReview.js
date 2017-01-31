@@ -24,10 +24,10 @@ export default function AnnualReview(props) {
               <div className="al_list__actions">
                 <div>
                   <i className="glyphicon glyphicon-ok" /> Approved
-                                    </div>
+                  </div>
                 <div>
                   <i className="glyphicon glyphicon-remove" /> Requires revision
-                                    </div>
+                  </div>
               </div>
             </li>
           </ul>
