@@ -1,5 +1,7 @@
 import React from 'react';
 
+import RequiredChanges from './RequiredChanges';
+
 function AssetsAndLiabilities({ data }) {
   return (
     <div>
@@ -14,20 +16,7 @@ function AssetsAndLiabilities({ data }) {
               <p>Main residence (UK)</p>
               <p><strong>£1,000,000</strong></p>
             </div>
-            <div className="al_list__input hidden">
-              <textarea
-                rows="5" className="input-transparent form-control"
-                placeholder="Please detail what changes need to be made"
-              />
-            </div>
-            <div className="al_list__actions">
-              <div>
-                <i className="glyphicon glyphicon-ok" /> Approved
-                  </div>
-              <div>
-                <i className="glyphicon glyphicon-remove" /> Requires revision
-                  </div>
-            </div>
+            <RequiredChanges />
           </li>
         </ul>
       </div>

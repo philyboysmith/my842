@@ -13,6 +13,8 @@ function FamilyTree({ data }) {
   );
 }
 
-FamilyTree.propTypes = {};
+FamilyTree.propTypes = {
+  data: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+};
 
 export default FamilyTree;
