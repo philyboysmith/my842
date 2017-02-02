@@ -33,7 +33,7 @@ export default class Login extends Component {
                   <span className="input-group-addon">
                     <i className="fa fa-lock"></i>
                   </span>
-                  <input type="text" className="form-control input-transparent"  ref="password" placeholder="password" />
+                  <input type="password" className="form-control input-transparent"  ref="password" placeholder="password" />
                 </div>
               </div>
               <div className="row">

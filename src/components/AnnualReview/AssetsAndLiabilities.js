@@ -3,7 +3,7 @@ import React from 'react';
 import RequiredChanges from './RequiredChanges';
 
 function renderListItem(item, title) {
-  let rendered = [];
+  const rendered = [];
   if (!Array.isArray(item)) {
     if (Object.keys(item).length === 0) {
     } else {
