@@ -4,6 +4,13 @@ function FamilyTree({ data }) {
   let parsedData = data;
   if (Object.keys(data).length === 0) {
     parsedData = 'No Family Tree data';
+  } else {
+    if (data.children.children) {
+
+    }
+    if (data.parents) {
+
+    }
   }
   return (
     <div>
