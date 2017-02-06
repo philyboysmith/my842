@@ -8,7 +8,7 @@ describe('annualReview reducer', () => {
   });
   it('should populate on a fetch success', () => {
     const expected = {
-      test: 'test',
+      data: { test: 'test' },
     };
     const actual = annualReview({}, {
       type: 'ANNUAL_REVIEW_SUCCESS',

@@ -7,25 +7,28 @@ import BudgetPlanner from './BudgetPlanner';
 import FamilyTree from './FamilyTree';
 import RiskProfile from './RiskProfile';
 
-function AnnualReview({ annualReviewResponse }) {
+function AnnualReview({ annualReviewData }) {
+  if (!annualReviewData) {
+    return null;
+  }
   return (
     <div>
-      <AssetsAndLiabilities data={annualReviewResponse.assets_and_liabilities} />
-      <FamilyTree data={annualReviewResponse.family_tree} />
-      <BudgetPlanner data={annualReviewResponse.budget_planner} />
-      <RiskProfile data={annualReviewResponse.risk_profile} />
-      <Availability data={annualReviewResponse.availability} />
+      <AssetsAndLiabilities data={annualReviewData.assets_and_liabilities} />
+      <FamilyTree data={annualReviewData.family_tree} />
+      <BudgetPlanner data={annualReviewData.budget_planner} />
+      <RiskProfile data={annualReviewData.risk_profile} />
+      <Availability data={annualReviewData.availability} />
     </div>
   );
 }
 
 AnnualReview.propTypes = {
-  annualReviewResponse: React.PropTypes.object,
+  annualReviewData: React.PropTypes.object,
 };
 
 function mapStateToProps(state) {
   return {
-    annualReviewResponse: state.annualReview,
+    annualReviewData: state.annualReview.data,
   };
 }
 

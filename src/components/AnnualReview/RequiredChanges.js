@@ -11,8 +11,8 @@ function RequiredChanges({ onApproved, onRevision }) {
         />
       </div>
       <div className="al_list__actions" >
-        <button onClick={onApproved} className="glyphicon glyphicon-ok"> Approved</button>
-        <button onClick={onRevision} className="glyphicon glyphicon-remove"> Requires revision</button>
+        <button style={{ color: 'green' }} onClick={onApproved} className="glyphicon glyphicon-ok"> Approved</button>
+        <button style={{ color: 'red' }} onClick={onRevision} className="glyphicon glyphicon-remove"> Requires revision</button>
       </div>
     </div>
   );
