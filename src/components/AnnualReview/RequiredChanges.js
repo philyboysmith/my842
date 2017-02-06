@@ -1,26 +1,26 @@
 import React from 'react';
 
-function RequiredChanges(props) {
+function RequiredChanges({ onApproved, onRevision }) {
   return (
     <div>
       <div className="al_list__input hidden">
         <textarea
-          rows="5" className="input-transparent form-control"
+          rows="5"
+          className="input-transparent form-control"
           placeholder="Please detail what changes need to be made"
         />
       </div>
-      <div className="al_list__actions">
-        <div>
-          <i className="glyphicon glyphicon-ok" /> Approved
-        </div>
-        <div>
-          <i className="glyphicon glyphicon-remove" /> Requires revision
-        </div>
+      <div className="al_list__actions" >
+        <button onClick={onApproved} className="glyphicon glyphicon-ok"> Approved</button>
+        <button onClick={onRevision} className="glyphicon glyphicon-remove"> Requires revision</button>
       </div>
     </div>
   );
 }
 
-RequiredChanges.propTypes = {};
+RequiredChanges.propTypes = {
+  onApproved: React.PropTypes.func.isRequired,
+  onRevision: React.PropTypes.func.isRequired,
+};
 
 export default RequiredChanges;

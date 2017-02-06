@@ -2,7 +2,7 @@ import React from 'react';
 
 function FamilyTree({ data }) {
   let parsedData = data;
-  if (data.length === 0) {
+  if (Object.keys(data).length === 0) {
     parsedData = 'No Family Tree data';
   }
   return (
@@ -29,15 +29,13 @@ function FamilyTree({ data }) {
         </li>
       )}
       </ul>
-      {
-        console.log(data)
-      }
     </div>
   );
 }
 
-// FamilyTree.propTypes = {
-//   data: React.PropTypes.object.isRequired,
-// };
+
+FamilyTree.propTypes = {
+  data: React.PropTypes.object.isRequired,
+};
 
 export default FamilyTree;

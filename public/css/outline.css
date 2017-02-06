@@ -1644,6 +1644,55 @@ select.input-transparent:focus {
   line-height: 1.5;
 }
 
+#family-tree {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.family-tree ul {
+  display: none;
+}
+
+.family-tree > ul {
+  display: block;
+}
+
+.family-tree {
+  text-align: center;
+}
+
+.family-tree > ul {
+  width: 100%;
+}
+
+.family-tree ul li {
+  float: left;
+}
+
+.client:first-child {
+  float: left;
+  width: 50%;
+  text-align: right;
+}
+
+.client:last-child {
+  float: right;
+  width: 50%;
+  text-align: left;
+}
+
+.person {
+  border: 1px solid white;
+  padding: 0.5em;
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  min-height: 100px;
+  margin: 50px 20px;
+  text-align: center;
+}
+
 .avatar {
   border-radius: 50%;
   overflow: hidden;

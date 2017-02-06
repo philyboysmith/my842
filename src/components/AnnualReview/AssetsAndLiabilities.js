@@ -25,7 +25,7 @@ function renderListItem(item, title) {
       <ul className="al_list">
         <li className="al_list__item">
           {rendered}
-          <RequiredChanges />
+          <RequiredChanges onApproved={() => false} onRevision={() => false} />
         </li>
       </ul>
     </div>
