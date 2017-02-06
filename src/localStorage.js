@@ -4,7 +4,7 @@ export const loadState = () => {
     if (serializedState === null) {
       return undefined;
     }
-    console.log('loading state');
+    console.log('Loading state from localStorage...');
     return JSON.parse(serializedState);
   } catch (err) {
     return undefined;
@@ -16,6 +16,6 @@ export const saveState = (state) => {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('state', serializedState);
   } catch (err) {
-    console.log('Cannot retrieve state');
+    console.error('Cannot retrieve state from localStorage');
   }
 };
