@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import api from './middleware/api';
+import invalidToken from './middleware/invalidToken';
 
 import { loadState, saveState } from './localStorage';
 
@@ -15,7 +16,8 @@ const persistedState = loadState();
 
 const logger = createLogger({ collapsed: true });
 
-const createStoreWithMiddleware = applyMiddleware(thunkMiddleware, api, logger)(createStore);
+const createStoreWithMiddleware = applyMiddleware(
+  thunkMiddleware, api, invalidToken, logger)(createStore);
 
 const store = createStoreWithMiddleware(rootReducer, persistedState);
 
