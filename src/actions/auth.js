@@ -76,7 +76,7 @@ export function fetchAnnualReview(clientId) {
 export function fetchTeam(clientId) {
   return {
     [CALL_API]: {
-      endpoint: 'clients/' + clientId + '/team',
+      endpoint: `clients/${clientId}/team`,
       authenticated: true,
       types: ['TEAM_SUCCESS', 'TEAM_FAILURE'],
     },
@@ -92,6 +92,7 @@ export function setActiveClient(clients, id) {
       client,
     };
   }
+  return {};
 }
 
 // Calls the API to get a token and
