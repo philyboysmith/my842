@@ -16,4 +16,11 @@ describe('annualReview reducer', () => {
     });
     expect(actual).toEqual(expected);
   });
+  it('should reset on RESET_STATE', () => {
+    const expected = {};
+    const actual = annualReview({ asdf: 'asdf' }, {
+      type: 'RESET_STATE',
+    });
+    expect(actual).toEqual(expected);
+  });
 });
