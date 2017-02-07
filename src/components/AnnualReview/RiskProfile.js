@@ -20,7 +20,7 @@ function RiskProfile({ data }) {
             <table className="table">
               <tbody>
                 {contact.questions.map((question, j) =>
-                  <tr key={`contact-${i}`}>
+                  <tr key={`contact-${j}`}>
                     <td width="400">
                       {j + 1}. {question.body}
                     </td>
