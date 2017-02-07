@@ -4,7 +4,7 @@ export const actionsThatImplyInvalidToken = [
 
 function invalidTokenMiddleware() {
   return next => (action) => {
-    if (actionsThatImplyInvalidToken.includes(action.type) && action.error === 'invalid_token') {
+    if (actionsThatImplyInvalidToken.includes(action.type) && action.error === 'token_expired') {
       localStorage.removeItem('token');
       return next({ type: 'RESET_STATE' });
     }
