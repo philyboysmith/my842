@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-fetch';
 import { browserHistory } from 'react-router';
 import { CALL_API } from '../middleware/api';
 
@@ -95,6 +94,30 @@ export function setActiveClient(clients, id) {
   return {};
 }
 
+export function logoutUser() {
+  return (dispatch) => {
+    dispatch(requestLogout());
+    localStorage.removeItem('state');
+    localStorage.removeItem('token');
+    localStorage.removeItem('clients');
+    dispatch(receiveLogout());
+    browserHistory.push('/');
+  };
+}
+
+export function emptyStateAndLogoutUser() {
+  return (dispatch) => {
+    dispatch(logoutUser());
+    dispatch(resetState());
+  };
+}
+
+export function resetError() {
+  return {
+    type: 'RESET_ERROR',
+  };
+}
+
 // Calls the API to get a token and
 // dispatches actions along the way
 export function loginUser(creds) {
@@ -128,27 +151,3 @@ export function loginUser(creds) {
   };
 }
 
-// Logs the user out
-export function logoutUser() {
-  return (dispatch) => {
-    dispatch(requestLogout());
-    localStorage.removeItem('state');
-    localStorage.removeItem('token');
-    localStorage.removeItem('clients');
-    dispatch(receiveLogout());
-    browserHistory.push('/');
-  };
-}
-
-export function emptyStateAndLogoutUser() {
-  return (dispatch) => {
-    dispatch(logoutUser());
-    dispatch(resetState());
-  };
-}
-
-export function resetError() {
-  return {
-    type: 'RESET_ERROR',
-  };
-}
