@@ -5,7 +5,6 @@ import IncomeList from './IncomeList';
 import LiquidAssetsList from './LiquidAssetsList';
 import PensionsList from './PensionsList';
 import PropertiesList from './PropertiesList';
-import RequiredChanges from './RequiredChanges';
 
 function AssetsAndLiabilities({ data }) {
   return (
@@ -23,11 +22,5 @@ function AssetsAndLiabilities({ data }) {
 AssetsAndLiabilities.propTypes = {
   data: React.PropTypes.object,
 };
-
-      // {renderListItem(data.properties, 'Properties')}
-      // {renderListItem(data.pensions, 'Pensions')}
-      // {renderListItem(data.income, 'Income')}
-      // {renderListItem(data.liquid_assets, 'Liquid Assets')}
-      // {renderListItem(data['current-accounts'], 'Current Accounts')}
 
 export default AssetsAndLiabilities;

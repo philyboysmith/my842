@@ -12,7 +12,6 @@ function AnnualReview({ annualReviewData }) {
   if (!annualReviewData) {
     return null;
   }
-  console.log(annualReviewData);
   return (
     <Tabs>
       <TabList className="nav nav-tabs">
