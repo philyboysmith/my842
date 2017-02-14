@@ -26,6 +26,8 @@ function AnnualReview({ annualReviewData }) {
       <TabPanel key="Introduction" className="tab-content">
         <h1>Welcome</h1>
         <p>The annual review process begins here. Once you've checked the following details we will be able to meet you and provide some expert advice.</p>
+        <p>This annual review is due on: <span>{annualReviewData.due_date}</span></p>
+        <p>Status: <span style={{ color: annualReviewData.status === 'complete' ? 'green' : 'red' }}>{annualReviewData.status}</span></p>
       </TabPanel>
       <TabPanel key="AssetsAndLiabilities" className="tab-content">
         <AssetsAndLiabilities data={annualReviewData.assets_and_liabilities} />
