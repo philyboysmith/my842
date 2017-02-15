@@ -1,12 +1,12 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions/auth.js';
+import * as actionCreators from '../actions/auth';
 
 import Main from './Main';
 
 function mapStateToProps(state) {
-
-  let API_URL = process.env.NODE_ENV === 'production' ? 'http://a2.eightfourtwo.com/api/v1/' : 'http://admin.842.local/api/v1/'
+  const API_URL = process.env.NODE_ENV === 'production' ?
+    'http://a2.eightfourtwo.com/api/v1/' : 'http://admin.842.local/api/v1/';
 
   return {
     api_url: API_URL,
