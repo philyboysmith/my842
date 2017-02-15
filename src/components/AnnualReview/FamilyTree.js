@@ -1,7 +1,6 @@
 import React from 'react';
 
 function FamilyTree({ data }) {
-  console.log(data);
   return (
     <div className="family-tree">
       <h1>Family Tree</h1>
