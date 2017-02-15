@@ -22,7 +22,12 @@ function IncomeList({ data }) {
 }
 
 IncomeList.propTypes = {
-  data: React.PropTypes.object.isRequired,
+  data: React.PropTypes.shape({
+    approved: React.PropTypes.bool,
+    name: React.PropTypes.string,
+    notes: React.PropTypes.string,
+    value: React.PropTypes.string,
+  }).isRequired,
 };
 
 export default IncomeList;
