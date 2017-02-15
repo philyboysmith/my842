@@ -20,7 +20,13 @@ function AssetsAndLiabilities({ data }) {
 }
 
 AssetsAndLiabilities.propTypes = {
-  data: React.PropTypes.object,
+  data: React.PropTypes.shape({
+    properties: React.PropTypes.array,
+    pensions: React.PropTypes.array,
+    income: React.PropTypes.object,
+    liquid_assets: React.PropTypes.array,
+    'current-accounts': React.PropTypes.array,
+  }).isRequired,
 };
 
 export default AssetsAndLiabilities;
