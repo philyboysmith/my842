@@ -9,9 +9,10 @@ function IncomeList({ data }) {
       <h2>Income</h2>
       <ul className="al_list">
         <li className="al_list__item">
-          <h4>{name}</h4>
-          <p>Notes: {notes}</p>
-          <p>Value: £{value}</p>
+          <div>
+              <h3>{name}</h3>
+              <p>{value}</p>
+            </div>
           <RequiredChanges isApproved={approved} onApproved={() => {}} onRevision={() => {}} />
         </li>
       </ul>

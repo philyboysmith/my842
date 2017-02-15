@@ -9,7 +9,7 @@ function RequiredChanges({ onApproved, onRevision, isApproved }) {
     );
   }
   return (
-    <div>
+    <section>
       <div className="al_list__input hidden">
         <textarea
           rows="5"
@@ -18,10 +18,10 @@ function RequiredChanges({ onApproved, onRevision, isApproved }) {
         />
       </div>
       <div className="al_list__actions" >
-        <button style={{ color: 'green' }} onClick={onApproved} className="glyphicon glyphicon-ok"> Approved</button>
-        <button style={{ color: 'red' }} onClick={onRevision} className="glyphicon glyphicon-remove"> Requires revision</button>
+        <div><button style={{ color: 'green' }} onClick={onApproved} className="glyphicon glyphicon-ok"> Approved</button></div>
+        <div><button style={{ color: 'red' }} onClick={onRevision} className="glyphicon glyphicon-remove"> Requires revision</button></div>
       </div>
-    </div>
+    </section>
   );
 }
 
