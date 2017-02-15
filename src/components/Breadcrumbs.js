@@ -8,7 +8,9 @@ function Breadcrumbs({ clients, title }) {
       <ol className="breadcrumb">
         <li><Link to={'/'}>Home</Link></li>
         {clients.activeClient &&
-          <li><Link to={`/clients/${clients.activeClient.id}`}>{clients.activeClient.name}</Link></li>
+          <li>
+            <Link to={`/clients/${clients.activeClient.id}`}>{clients.activeClient.name}</Link>
+          </li>
         }
         <li>{title}</li>
       </ol>
