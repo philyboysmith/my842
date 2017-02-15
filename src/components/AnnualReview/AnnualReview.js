@@ -22,9 +22,7 @@ function AnnualReview({ annualReviewData }) {
         <Tab key="RiskProfile"><span>Risk Profile</span></Tab>
         <Tab key="Availability"><span>Availability</span></Tab>
       </TabList>
-      <TabPanel key="FamilyTree" className="tab-content">
-        <FamilyTree data={annualReviewData.family_tree} />
-      </TabPanel>
+      
       <TabPanel key="Introduction" className="tab-content">
         <h1>Welcome</h1>
         <p>The annual review process begins here. Once you've checked the following details we will be able to meet you and provide some expert advice.</p>
@@ -34,7 +32,9 @@ function AnnualReview({ annualReviewData }) {
       <TabPanel key="AssetsAndLiabilities" className="tab-content">
         <AssetsAndLiabilities data={annualReviewData.assets_and_liabilities} />
       </TabPanel>
-
+<TabPanel key="FamilyTree" className="tab-content">
+        <FamilyTree data={annualReviewData.family_tree} />
+      </TabPanel>
       <TabPanel key="BudgetPlanner" className="tab-content">
         <BudgetPlanner data={annualReviewData.budget_planner} />
       </TabPanel>
