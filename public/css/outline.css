@@ -1644,18 +1644,22 @@ select.input-transparent:focus {
   line-height: 1.5;
 }
 
-#family-tree {
-  width: 100%;
-  height: 100vh;
-  overflow: scroll;
+.client:first-child::before, .with-parents > .person::before, .with-children > .person::after, ul.parents::after, ul.parents .person::after, ul.siblings .person::after, ul.client__children::before, .children::before {
+  content: " ";
+  background-color: rgba(197, 197, 197, 0.3);
+  position: absolute;
 }
 
-.family-tree ul {
-  display: none;
-}
-
-.family-tree > ul {
-  display: block;
+.person {
+  font-size: 12px;
+  border: 1px solid white;
+  padding: 0.5em;
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  min-height: 100px;
+  margin: 24px 18px;
+  text-align: center;
 }
 
 .family-tree {
@@ -1666,8 +1670,37 @@ select.input-transparent:focus {
   width: 100%;
 }
 
-.family-tree ul li {
-  float: left;
+.family-tree > ul:first-child {
+  margin-top: 196px;
+}
+
+.family-tree li {
+  display: inline-block;
+}
+
+.client {
+  position: relative;
+}
+
+.client:first-child::before {
+  height: 1px;
+  width: 40px;
+  right: -20px;
+  top: 75px;
+}
+
+.with-parents > .person::before {
+  height: 25px;
+  width: 1px;
+  top: -25px;
+  left: 50px;
+}
+
+.with-children > .person::after {
+  height: 25px;
+  width: 1px;
+  bottom: -25px;
+  left: 50px;
 }
 
 .client:first-child {
@@ -1676,21 +1709,113 @@ select.input-transparent:focus {
   text-align: right;
 }
 
+.client:first-child .person,
+.client:first-child ul.client__children,
+.client:first-child ul.grandchildren {
+  float: right;
+  clear: both;
+}
+
 .client:last-child {
   float: right;
   width: 50%;
   text-align: left;
 }
 
-.person {
-  border: 1px solid white;
-  padding: 0.5em;
+.client:last-child .person,
+.client:last-child ul.client__children,
+.client:last-child ul.grandchildren {
+  float: left;
+  clear: both;
+}
+
+ul.parents {
+  display: block;
+  position: absolute;
+  top: -148px;
+  height: 150px;
+}
+
+.client:first-child ul.parents {
+  right: 0;
+}
+
+.client:last-child ul.parents {
+  left: 0;
+}
+
+ul.parents::after {
+  height: 1px;
+  bottom: 0;
+  right: 66px;
+  left: 69px;
+}
+
+ul.parents .person::after {
+  width: 1px;
+  height: 25px;
+  left: 50px;
+  bottom: -25px;
+}
+
+ul.siblings {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+ul.siblings .person::after {
+  width: 40px;
+  height: 1px;
+  top: 50px;
+}
+
+.client:first-child ul.siblings {
+  right: 140px;
+}
+
+.client:first-child ul.siblings .person::after {
+  right: -40px;
+}
+
+.client:last-child ul.siblings {
+  left: 140px;
+}
+
+.client:last-child ul.siblings .person::after {
+  left: -40px;
+}
+
+ul.client__children {
   position: relative;
-  display: inline-block;
-  width: 200px;
-  min-height: 100px;
-  margin: 50px 20px;
-  text-align: center;
+}
+
+ul.client__children .grandchildren li {
+  display: block;
+}
+
+ul.client__children::before {
+  height: 1px;
+  top: 0;
+  right: 70px;
+  left: 70px;
+}
+
+.children {
+  position: relative;
+}
+
+.children::before {
+  height: 40px;
+  width: 1px;
+  bottom: 0;
+  left: 50%;
+}
+
+.generations-3::before {
+  height: 400px;
+  top: -375px;
 }
 
 .avatar {
@@ -1827,18 +1952,17 @@ tr.odd td {
   border-bottom: 1px solid rgba(197, 197, 197, 0.3);
 }
 
-.al_list__item > section textarea {
+.al_list__item > div textarea,
+.al_list__item > section > div textarea {
   width: 100%;
 }
 
 .al_list__actions {
   display: -webkit-box;
   display: flex;
-  padding: 0!important;
+  padding: 0 !important;
 }
-.al_list__actions button {
-  margin: 0;
-}
+
 .al_list__actions > div {
   float: left;
   width: 50%;
