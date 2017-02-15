@@ -33,7 +33,7 @@ function BudgetPlanner({ data }) {
                 <input className="input-transparent form-control" name="post_age_75_80" placeholder="50" />
               </Td>
             </Tr>,
-              )}
+          )}
         </Table>,
       )}
     </div>
