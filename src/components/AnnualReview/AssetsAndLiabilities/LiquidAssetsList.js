@@ -13,6 +13,7 @@ function LiquidAssetsList({ data }) {
               <h3>{title}</h3>
               <p>{description}</p>
               <p>{value}</p>
+              { notes ? <p>{notes}</p> : '' }
             </div>
             <RequiredChanges isApproved={approved} onApproved={() => {}} onRevision={() => {}} />
           </li>
@@ -23,7 +24,14 @@ function LiquidAssetsList({ data }) {
 }
 
 LiquidAssetsList.propTypes = {
-  data: React.PropTypes.array.isRequired,
+  data: React.PropTypes.arrayOf(React.PropTypes.shape({
+    approved: React.PropTypes.bool,
+    description: React.PropTypes.string,
+    notes: React.PropTypes.string,
+    title: React.PropTypes.string,
+    uid: React.PropTypes.string,
+    value: React.PropTypes.number,
+  })).isRequired,
 };
 
 export default LiquidAssetsList;
