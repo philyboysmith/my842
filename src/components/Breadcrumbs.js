@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Link } from 'react-router';
 
 function Breadcrumbs({ clients, title }) {
@@ -7,12 +6,17 @@ function Breadcrumbs({ clients, title }) {
     <div key="Breadcrumb" className="row">
       <ol className="breadcrumb">
         <li><Link to={'/'}>Home</Link></li>
-        {clients.activeClient &&
+        {title !== 'Clients' && clients.activeClient &&
+          <li><Link to={'/'}>Clients</Link></li>
+        }
+        {title !== 'Clients' && clients.activeClient &&
           <li>
             <Link to={`/clients/${clients.activeClient.id}`}>{clients.activeClient.name}</Link>
           </li>
         }
-        <li>{title}</li>
+        {title.length > 0 &&
+          <li>{title}</li>
+        }
       </ol>
     </div>
   );

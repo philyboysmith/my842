@@ -13,6 +13,7 @@ function mapStateToProps(state) {
     clients: state.clients,
     auth: state.auth,
     team: state.team,
+    routing: state.routing,
   };
 }
 

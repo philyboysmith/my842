@@ -35,7 +35,7 @@ const router = (
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Clients} title="Clients" />
-        <Route onEnter={denyWithoutAuthentication} path="/clients/:clientID" component={Client} title="Client View" />
+        <Route onEnter={denyWithoutAuthentication} path="/clients/:clientID" component={Client} title="" />
         <Route onEnter={denyWithoutAuthentication} path="/clients/:clientID/meetings" component={Meetings} title="My Meetings" />
         <Route onEnter={denyWithoutAuthentication} path="/clients/:clientID/children" component={Children} title="My Children and Dependents" />
         <Route onEnter={denyWithoutAuthentication} path="/clients/:clientID/contacts" component={Contacts} title="My Personal Details" />

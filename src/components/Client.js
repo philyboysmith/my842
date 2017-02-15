@@ -1,9 +1,7 @@
 import React from 'react';
 
-
 class Client extends React.Component {
-  componentDidMount() {
-    console.log(this.props);
+  componentWillMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.setActiveClient(this.props.clients.data, this.props.params.clientID);
     }
@@ -12,10 +10,18 @@ class Client extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello world</h1>
+        <h1>{this.props.clients.activeClient.name}</h1>
+        <p>Use the menu above to access client details.</p>
       </div>
     );
   }
 }
+
+Client.propTypes = {
+  auth: React.PropTypes.object,
+  clients: React.PropTypes.object,
+  params: React.PropTypes.object,
+  setActiveClient: React.PropTypes.func,
+};
 
 export default Client;
