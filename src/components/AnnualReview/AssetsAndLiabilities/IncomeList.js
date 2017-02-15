@@ -10,9 +10,10 @@ function IncomeList({ data }) {
       <ul className="al_list">
         <li className="al_list__item">
           <div>
-              <h3>{name}</h3>
-              <p>{value}</p>
-            </div>
+            <h3>{name}</h3>
+            <p>{value}</p>
+            { notes ? <p>{notes}</p> : '' }
+          </div>
           <RequiredChanges isApproved={approved} onApproved={() => {}} onRevision={() => {}} />
         </li>
       </ul>
@@ -21,7 +22,12 @@ function IncomeList({ data }) {
 }
 
 IncomeList.propTypes = {
-  data: React.PropTypes.object.isRequired,
+  data: React.PropTypes.shape({
+    approved: React.PropTypes.bool,
+    name: React.PropTypes.string,
+    notes: React.PropTypes.string,
+    value: React.PropTypes.string,
+  }).isRequired,
 };
 
 export default IncomeList;

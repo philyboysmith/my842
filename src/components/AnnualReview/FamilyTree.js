@@ -1,7 +1,6 @@
 import React from 'react';
 
 function FamilyTree({ data }) {
-  console.log(data);
   return (
     
 
@@ -38,12 +37,16 @@ function FamilyTree({ data }) {
           )}
         </ul>
       </div>
+
     </div>
   );
 }
 
 FamilyTree.propTypes = {
-  data: React.PropTypes.object.isRequired,
+  data: React.PropTypes.shape({
+    children: React.PropTypes.array,
+    parents: React.PropTypes.array,
+  }).isRequired,
 };
 
 export default FamilyTree;

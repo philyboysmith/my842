@@ -1,10 +1,10 @@
 import React from 'react';
 
-import CurrentAccountsList from './CurrentAccountsList';
-import IncomeList from './IncomeList';
-import LiquidAssetsList from './LiquidAssetsList';
-import PensionsList from './PensionsList';
-import PropertiesList from './PropertiesList';
+import CurrentAccountsList from './AssetsAndLiabilities/CurrentAccountsList';
+import IncomeList from './AssetsAndLiabilities/IncomeList';
+import LiquidAssetsList from './AssetsAndLiabilities/LiquidAssetsList';
+import PensionsList from './AssetsAndLiabilities/PensionsList';
+import PropertiesList from './AssetsAndLiabilities/PropertiesList';
 
 function AssetsAndLiabilities({ data }) {
   return (
@@ -20,7 +20,13 @@ function AssetsAndLiabilities({ data }) {
 }
 
 AssetsAndLiabilities.propTypes = {
-  data: React.PropTypes.object,
+  data: React.PropTypes.shape({
+    properties: React.PropTypes.array,
+    pensions: React.PropTypes.array,
+    income: React.PropTypes.object,
+    liquid_assets: React.PropTypes.array,
+    'current-accounts': React.PropTypes.array,
+  }).isRequired,
 };
 
 export default AssetsAndLiabilities;
