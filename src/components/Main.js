@@ -7,7 +7,6 @@ import Breadcrumbs from './Breadcrumbs';
 import ClientNav from './ClientNav';
 
 class Main extends React.Component {
-
   componentWillMount() {
     if (location.pathname !== '/' && !this.props.auth.isAuthenticated) browserHistory.push('/');
     if (this.props.auth.isAuthenticated) {
@@ -22,10 +21,6 @@ class Main extends React.Component {
 
         });
     }
-  }
-
-  componentDidMount() {
-
   }
 
   render() {
@@ -75,4 +70,28 @@ class Main extends React.Component {
     );
   }
 }
+
+Main.propTypes = {
+  api_url: React.PropTypes.string.isRequired,
+  auth: React.PropTypes.object.isRequired,
+  children: React.PropTypes.object.isRequired,
+  clients: React.PropTypes.object.isRequired,
+  emptyStateAndLogoutUser: React.PropTypes.func.isRequired,
+  fetchAnnualReview: React.PropTypes.func.isRequired,
+  fetchClients: React.PropTypes.func.isRequired,
+  fetchTeam: React.PropTypes.func.isRequired,
+  location: React.PropTypes.object.isRequired,
+  loginUser: React.PropTypes.func.isRequired,
+  logoutUser: React.PropTypes.func.isRequired,
+  params: React.PropTypes.object.isRequired,
+  resetError: React.PropTypes.func.isRequired,
+  resetState: React.PropTypes.func.isRequired,
+  route: React.PropTypes.object.isRequired,
+  routeParams: React.PropTypes.object.isRequired,
+  router: React.PropTypes.object.isRequired,
+  routes: React.PropTypes.array.isRequired,
+  setActiveClient: React.PropTypes.func.isRequired,
+  team: React.PropTypes.object.isRequired,
+};
+
 export default Main;
