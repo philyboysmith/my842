@@ -1821,20 +1821,24 @@ tr.odd td {
   margin: 0;
 }
 
-.al_list__item > div {
+.al_list__item > div,
+.al_list__item > section > div {
   padding: 0.25em 1em;
   border-bottom: 1px solid rgba(197, 197, 197, 0.3);
 }
 
-.al_list__item > div textarea {
+.al_list__item > section textarea {
   width: 100%;
 }
 
 .al_list__actions {
   display: -webkit-box;
   display: flex;
+  padding: 0!important;
 }
-
+.al_list__actions button {
+  margin: 0;
+}
 .al_list__actions > div {
   float: left;
   width: 50%;
