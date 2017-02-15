@@ -12,6 +12,7 @@ function PropertiesList({ data }) {
             <div>
               <h3>{title}</h3>
               <p>{description}</p>
+              <p>{value}</p>
             </div>
             <RequiredChanges isApproved={approved} onApproved={() => {}} onRevision={() => {}} />
           </li>
