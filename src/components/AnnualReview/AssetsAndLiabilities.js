@@ -1,10 +1,10 @@
 import React from 'react';
 
-import CurrentAccountsList from './CurrentAccountsList';
-import IncomeList from './IncomeList';
-import LiquidAssetsList from './LiquidAssetsList';
-import PensionsList from './PensionsList';
-import PropertiesList from './PropertiesList';
+import CurrentAccountsList from './AssetsAndLiabilities/CurrentAccountsList';
+import IncomeList from './AssetsAndLiabilities/IncomeList';
+import LiquidAssetsList from './AssetsAndLiabilities/LiquidAssetsList';
+import PensionsList from './AssetsAndLiabilities/PensionsList';
+import PropertiesList from './AssetsAndLiabilities/PropertiesList';
 
 function AssetsAndLiabilities({ data }) {
   return (

@@ -6,10 +6,10 @@ function FamilyTree({ data }) {
     
 
     <div className="family-tree">
-      <h1>Family tree</h1>
+      <h1>Family Tree</h1>
       <ul className="clearfix">
         {data.parents.map((parent, i) =>
-          <li key={i} className={'client ' + (parent.parents.length > 0 ? 'with-parents' : '')}>
+          <li key={i} className={`client ${parent.parents.length > 0 ? 'with-parents' : ''}`}>
             {parent.name}
             <ul className="grandparents">
               {parent.parents.map((grandparent, j) =>
