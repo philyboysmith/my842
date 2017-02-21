@@ -7,7 +7,7 @@ function FamilyTree({ data }) {
     <div id="family-tree-wrapper">
       <h1>Family tree</h1>
       <div className="family-tree" id="family-tree">
-        <ul className="clients">
+        <ul className="clearfix clients">
           {data.parents.map((parent, i) =>
             <li key={i} className={'client ' + (parent.parents.length > 0 ? 'with-parents' : '')}>
               <span className="person">{parent.name}</span>
@@ -28,7 +28,7 @@ function FamilyTree({ data }) {
             </li>,
           )}
         </ul>
-        <ul className="children generations-1">
+        <ul className="clearfix children generations-1">
           {data.children.map((parent, i) =>
             <li key={i} className={'client ' + (parent.children.length > 0 ? 'with-child' : '')}>
               <span className="person">{parent.name}</span>

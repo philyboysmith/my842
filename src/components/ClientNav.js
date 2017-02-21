@@ -44,7 +44,7 @@ export default class ClientNav extends React.Component {
 						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/savings`}>My Business Savings and Investment Planning</Link></li>
 						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/successions`}>My Succession Planning 👍</Link></li>
 						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/benefits`}>My Employee Benefits 👍</Link></li>
-						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/annual-review/`}>Annual Review</Link></li>
+						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/annual-review`}>Annual Review</Link></li>
 						{this.props.clients.data.length > 1 &&
 
 							<li className="client-nav__item"><Link to={`/`}>Switch clients 👍</Link></li>
@@ -78,7 +78,7 @@ export default class ClientNav extends React.Component {
 						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/savings`}>My Saving and Investment Planning</Link></li>
 						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/estates`}>My Estate Planning 👍</Link></li>
 						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/expenditures`}>My Expenditures 👍</Link></li>
-						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/annual-review/`}>Annual Review</Link></li>
+						<li className="client-nav__item"><Link to={`/clients/${this.props.clients.activeClient.id}/annual-review`}>Annual Review</Link></li>
 						{this.props.clients.data.length > 1 &&
 							<li className="client-nav__item"><Link to={`/`}>Switch clients 👍</Link></li>
 						}
