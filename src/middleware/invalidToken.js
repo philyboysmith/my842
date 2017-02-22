@@ -1,5 +1,6 @@
 export const actionsThatImplyInvalidToken = [
   'CLIENTS_FAILURE', 'TEAM_FAILURE', 'ANNUAL_REVIEW_FAILURE',
+  'POST_REVISION_FAILURE',
 ];
 
 function invalidTokenMiddleware() {

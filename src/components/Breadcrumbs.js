@@ -25,7 +25,10 @@ function Breadcrumbs({ clients, title }) {
 Breadcrumbs.propTypes = {
   clients: React.PropTypes.shape({
     activeClient: React.PropTypes.object,
-    data: React.PropTypes.array,
+    data: React.PropTypes.oneOfType([
+      React.PropTypes.array,
+      React.PropTypes.object,
+    ]),
     isFetching: React.PropTypes.bool,
     isLoaded: React.PropTypes.bool,
   }).isRequired,
