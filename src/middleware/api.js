@@ -1,4 +1,4 @@
-const BASE_URL = 'http://admin.eightfourtwo.com/api/v1/';
+const BASE_URL = 'https://admin.eightfourtwo.com/api/v1/';
 
 async function callApi(endpoint, authenticated) {
   const token = localStorage.getItem('token') || null;

@@ -6,7 +6,7 @@ import Main from './Main';
 
 function mapStateToProps(state) {
   const API_URL = process.env.NODE_ENV === 'production' ?
-    'http://a2.eightfourtwo.com/api/v1/' : 'http://admin.842.local/api/v1/';
+    'https://a2.eightfourtwo.com/api/v1/' : 'https://admin.842.local/api/v1/';
 
   return {
     api_url: API_URL,

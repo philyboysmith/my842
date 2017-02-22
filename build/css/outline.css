@@ -1644,22 +1644,29 @@ select.input-transparent:focus {
   line-height: 1.5;
 }
 
-.client:first-child::before, .with-parents > .person::before, .with-children > .person::after, ul.parents::after, ul.parents .person::after, ul.siblings .person::after, ul.client__children::before, .children::before {
+.client:first-child::before, .with-parents > .person::before, .with-children > .person::after, ul.parents::after, ul.parents .person::after, ul.siblings .person::after, ul.client__children::before, .children__wrapper::before, .children::after {
   content: " ";
-  background-color: rgba(197, 197, 197, 0.3);
+  background-color: rgba(255, 255, 255, 0.07);
   position: absolute;
 }
 
 .person {
   font-size: 12px;
-  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.07);
   padding: 0.5em;
   position: relative;
-  display: inline-block;
   width: 100px;
+  display: block;
   min-height: 100px;
-  margin: 24px 18px;
+  margin: 25px 20px;
   text-align: center;
+}
+
+.person__name {
+  color: white;
+  font-family: "ProximaNova-Semibold", serif;
+  width: 100%;
+  display: inline-block;
 }
 
 .family-tree {
@@ -1668,14 +1675,12 @@ select.input-transparent:focus {
 
 .family-tree > ul {
   width: 100%;
+  display: -webkit-box;
+  display: flex;
 }
 
 .family-tree > ul:first-child {
-  margin-top: 196px;
-}
-
-.family-tree li {
-  display: inline-block;
+  margin-top: 225px;
 }
 
 .client {
@@ -1690,16 +1695,16 @@ select.input-transparent:focus {
 }
 
 .with-parents > .person::before {
-  height: 25px;
+  height: 26px;
   width: 1px;
-  top: -25px;
+  top: -26px;
   left: 50px;
 }
 
 .with-children > .person::after {
-  height: 25px;
+  height: 26px;
   width: 1px;
-  bottom: -25px;
+  bottom: -26px;
   left: 50px;
 }
 
@@ -1730,9 +1735,10 @@ select.input-transparent:focus {
 }
 
 ul.parents {
-  display: block;
+  display: -webkit-box;
+  display: flex;
   position: absolute;
-  top: -148px;
+  top: -150px;
   height: 150px;
 }
 
@@ -1747,8 +1753,8 @@ ul.parents {
 ul.parents::after {
   height: 1px;
   bottom: 0;
-  right: 66px;
-  left: 69px;
+  right: 70px;
+  left: 70px;
 }
 
 ul.parents .person::after {
@@ -1759,7 +1765,8 @@ ul.parents .person::after {
 }
 
 ul.siblings {
-  display: block;
+  display: -webkit-box;
+  display: flex;
   position: absolute;
   width: 100%;
   top: 0;
@@ -1773,6 +1780,8 @@ ul.siblings .person::after {
 
 .client:first-child ul.siblings {
   right: 140px;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
 }
 
 .client:first-child ul.siblings .person::after {
@@ -1792,7 +1801,8 @@ ul.client__children {
 }
 
 ul.client__children .grandchildren li {
-  display: block;
+  display: -webkit-box;
+  display: flex;
 }
 
 ul.client__children::before {
@@ -1802,20 +1812,40 @@ ul.client__children::before {
   left: 70px;
 }
 
-.children {
+.children__wrapper {
+  display: -webkit-box;
+  display: flex;
   position: relative;
+  -webkit-box-pack: center;
+  justify-content: center;
 }
 
-.children::before {
+.children {
+  position: relative;
+  width: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.children__wrapper::before {
   height: 40px;
   width: 1px;
-  bottom: 0;
+  bottom: 100%;
   left: 50%;
 }
 
+.children::after {
+  height: 1px;
+  width: auto;
+  right: 70px;
+  left: 70px;
+  top: 0;
+}
+
 .generations-3::before {
-  height: 400px;
-  top: -375px;
+  height: 375px;
 }
 
 .avatar {
@@ -1898,6 +1928,10 @@ table tbody > tr,
 .table-striped tbody > tr:nth-child(odd) > td,
 tr.odd td {
   background-color: rgba(255, 255, 255, 0.07);
+}
+
+.table--budget-planner td {
+  vertical-align: middle;
 }
 
 .single-widget-container .widget {

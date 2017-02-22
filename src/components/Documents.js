@@ -8,7 +8,7 @@ export default class Documents extends React.Component {
 
 	render() {
 
-		const BASE_URL = process.env.NODE_ENV === 'production' ? 'http://a2.eightfourtwo.com/api/v1/' : 'http://admin.842.local/api/v1/'
+		const BASE_URL = process.env.NODE_ENV === 'production' ? 'https://a2.eightfourtwo.com/api/v1/' : 'https://admin.842.local/api/v1/'
 
 		const {activeClient} = this.props.clients;
 
