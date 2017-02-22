@@ -14,7 +14,7 @@ function AssetsAndLiabilities({ data }) {
       <PensionsList data={data.pensions} />
       <IncomeList data={data.income} />
       <LiquidAssetsList data={data.liquid_assets} />
-      <CurrentAccountsList data={data['current-accounts']} />
+      <CurrentAccountsList data={data['current_accounts']} />
     </div>
   );
 }
@@ -25,7 +25,7 @@ AssetsAndLiabilities.propTypes = {
     pensions: React.PropTypes.array,
     income: React.PropTypes.object,
     liquid_assets: React.PropTypes.array,
-    'current-accounts': React.PropTypes.array,
+    'current_accounts': React.PropTypes.array,
   }).isRequired,
 };
 
