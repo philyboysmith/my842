@@ -22,7 +22,7 @@ function AnnualReview({ annualReviewData }) {
         <Tab key="RiskProfile"><span>Risk Profile</span></Tab>
         <Tab key="Availability"><span>Availability</span></Tab>
       </TabList>
-      
+
       <TabPanel key="Introduction" className="tab-content">
         <h1>Welcome</h1>
         <p>The annual review process begins here. Once you've checked the following details we will be able to meet you and provide some expert advice.</p>
@@ -32,7 +32,7 @@ function AnnualReview({ annualReviewData }) {
       <TabPanel key="AssetsAndLiabilities" className="tab-content">
         <AssetsAndLiabilities data={annualReviewData.assets_and_liabilities} />
       </TabPanel>
-<TabPanel key="FamilyTree" className="tab-content">
+      <TabPanel key="FamilyTree" className="tab-content">
         <FamilyTree data={annualReviewData.family_tree} />
       </TabPanel>
       <TabPanel key="BudgetPlanner" className="tab-content">
@@ -46,12 +46,18 @@ function AnnualReview({ annualReviewData }) {
       </TabPanel>
 
     </Tabs>
-
   );
 }
 
 AnnualReview.propTypes = {
-  annualReviewData: React.PropTypes.object,
+  annualReviewData: React.PropTypes.shape({
+    assets_and_liabilities: React.PropTypes.object,
+    availability: React.PropTypes.array,
+    due_date: React.PropTypes.string,
+    family_tree: React.PropTypes.object,
+    risk_profile: React.PropTypes.array,
+    status: React.PropTypes.string,
+  }).isRequired,
 };
 
 function mapStateToProps(state) {
