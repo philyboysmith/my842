@@ -10,12 +10,11 @@ import FamilyTree from './FamilyTree';
 import RiskProfile from './RiskProfile';
 
 class AnnualReview extends Component {
-  componentDidMount() {
-    this.props.fetchAnnualReview();
+  componentWillMount() {
+    this.props.fetchAnnualReview(this.props.params.clientID);
   }
 
   render() {
-    console.log(this.props);
     const { annualReviewData } = this.props;
     if (!annualReviewData) {
       return null;
@@ -70,6 +69,7 @@ AnnualReview.propTypes = {
     status: React.PropTypes.string,
   }).isRequired,
   fetchAnnualReview: React.PropTypes.func.isRequired,
+  params: React.PropTypes.object,
 };
 
 function mapStateToProps(state) {

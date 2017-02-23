@@ -14,7 +14,7 @@ function AssetsAndLiabilities({ data }) {
       <PensionsList data={data.pensions} />
       <IncomeList data={data.income} />
       <LiquidAssetsList data={data.liquid_assets} />
-      <CurrentAccountsList data={data['current_accounts']} />
+      <CurrentAccountsList data={data.current_accounts} />
     </div>
   );
 }
