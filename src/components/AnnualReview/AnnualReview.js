@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import pure from 'recompose/pure';
 
 import AssetsAndLiabilities from './AssetsAndLiabilities';
 import Availability from './Availability';
@@ -44,7 +45,6 @@ function AnnualReview({ annualReviewData }) {
       <TabPanel key="Availability" className="tab-content">
         <Availability data={annualReviewData.availability} />
       </TabPanel>
-
     </Tabs>
   );
 }
@@ -70,4 +70,4 @@ function mapDispatchToProps(dispatch) {
   return { dispatch };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnualReview);
+export default pure(connect(mapStateToProps, mapDispatchToProps)(AnnualReview));
