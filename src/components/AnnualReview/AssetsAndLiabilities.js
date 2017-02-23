@@ -25,7 +25,7 @@ AssetsAndLiabilities.propTypes = {
     pensions: React.PropTypes.array,
     income: React.PropTypes.object,
     liquid_assets: React.PropTypes.array,
-    'current_accounts': React.PropTypes.array,
+    current_accounts: React.PropTypes.array,
   }).isRequired,
 };
 
