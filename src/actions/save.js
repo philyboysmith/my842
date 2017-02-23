@@ -1,6 +1,6 @@
 import { CALL_API } from '../middleware/api';
 
-export function post(clientId) {
+export default function post(clientId, postData) {
   return {
     [CALL_API]: {
       endpoint: `clients/${clientId}/annual_review`,
