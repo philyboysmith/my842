@@ -1,7 +1,7 @@
 import { browserHistory } from 'react-router';
 import { CALL_API } from '../middleware/api';
 
-const BASE_URL = 'http://admin.eightfourtwo.com/api/v1/';
+import BASE_URL from './index';
 
 export function resetState() {
   return {
