@@ -14,11 +14,8 @@ class Main extends React.Component {
         .then((clients) => {
           if (this.props.params.clientID) {
             this.props.setActiveClient(clients.response, this.props.params.clientID);
-            return this.props.fetchAnnualReview(this.props.params.clientID);
+            this.props.fetchAnnualReview(this.props.params.clientID);
           }
-        })
-        .catch((response) => {
-
         });
     }
   }
@@ -29,7 +26,8 @@ class Main extends React.Component {
     let title = route.title;
 
 
-    if (this.props.clients.activeClient && this.props.clients.activeClient.is_business && route.business_title) {
+    if (this.props.clients.activeClient && this.props.clients.activeClient.is_business
+      && route.business_title) {
       title = route.business_title;
     }
 
