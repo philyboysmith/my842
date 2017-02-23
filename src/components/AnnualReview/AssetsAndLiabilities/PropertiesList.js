@@ -2,7 +2,7 @@ import React from 'react';
 
 import RequiredChanges from './RequiredChanges';
 
-function PropertiesList({ data }) {
+function PropertiesList({ data, postAnnualReview }) {
   return (
     <div>
       <h2>Properties</h2>
@@ -32,6 +32,7 @@ PropertiesList.propTypes = {
     uid: React.PropTypes.string,
     value: React.PropTypes.number,
   })).isRequired,
+  postAnnualReview: React.PropTypes.func.isRequired,
 };
 
 export default PropertiesList;

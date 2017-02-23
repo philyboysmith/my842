@@ -1,6 +1,7 @@
 import BASE_URL from './index';
+import { emptyStateAndLogoutUser } from './auth';
 
-function requestPostAnnualReview(clientId, data) {
+export function requestPostAnnualReview(clientId, data) {
   return {
     type: 'POST_ANNUAL_REVIEW',
     payload: {
@@ -9,7 +10,8 @@ function requestPostAnnualReview(clientId, data) {
     },
   };
 }
-function receivePostAnnualReview(data) {
+
+export function receivePostAnnualReview(data) {
   return {
     type: 'POST_ANNUAL_REVIEW_SUCCESS',
     payload: {
@@ -17,7 +19,8 @@ function receivePostAnnualReview(data) {
     },
   };
 }
-function errorPostAnnualReview(error) {
+
+export function errorPostAnnualReview(error) {
   return {
     type: 'POST_ANNUAL_REVIEW_FAILURE',
     payload: {
@@ -45,13 +48,13 @@ export function postAnnualReview(clientId, data) {
           throw new Error('Invalid credentials');
         }
         if (response.status === 402) {
-          // TODO: Do something on 402
+          throw new Error('Invalid data');
         }
         if (response.status === 500) {
           throw new Error('Server error');
         }
       })
       .then(successData => dispatch(receivePostAnnualReview(successData)))
-      .catch(error => dispatch(errorPostAnnualReview(error));
+      .catch(error => dispatch(errorPostAnnualReview(error)));
   };
 }

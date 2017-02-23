@@ -40,7 +40,7 @@ class AnnualReview extends Component {
           <p>Status: <span style={{ color: annualReviewData.status === 'complete' ? 'green' : 'red' }}>{annualReviewData.status}</span></p>
         </TabPanel>
         <TabPanel key="AssetsAndLiabilities" className="tab-content">
-          <AssetsAndLiabilities data={annualReviewData.assets_and_liabilities} />
+          <AssetsAndLiabilities postAnnualReview={this.props.postAnnualReview} data={annualReviewData.assets_and_liabilities} />
         </TabPanel>
         <TabPanel key="FamilyTree" className="tab-content">
           <FamilyTree data={annualReviewData.family_tree} />
@@ -69,6 +69,7 @@ AnnualReview.propTypes = {
     status: React.PropTypes.string,
   }).isRequired,
   fetchAnnualReview: React.PropTypes.func.isRequired,
+  postAnnualReview: React.PropTypes.func.isRequired,
   params: React.PropTypes.object,
 };
 
