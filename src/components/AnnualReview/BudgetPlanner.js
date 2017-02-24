@@ -21,16 +21,16 @@ function BudgetPlanner({ data }) {
             <Tr key={j}>
               <Td column="title">{category.title}</Td>
               <Td column="current_lifestyle">
-                <input className="input-transparent form-control" name="current_lifestyle" placeholder="50" />
+                <input className="input-transparent form-control" name="current_lifestyle" placeholder="Click to edit" />
               </Td>
               <Td column="survivors_lifestyle">
-                <input className="input-transparent form-control" name="survivors_lifestyle" placeholder="50" />
+                <input className="input-transparent form-control" name="survivors_lifestyle" placeholder="Click to edit" />
               </Td>
               <Td column="at_selected_retirement">
-                <input className="input-transparent form-control" name="at_selected_retirement" placeholder="50" />
+                <input className="input-transparent form-control" name="at_selected_retirement" placeholder="Click to edit" />
               </Td>
               <Td column="post_age_75_80">
-                <input className="input-transparent form-control" name="post_age_75_80" placeholder="50" />
+                <input className="input-transparent form-control" name="post_age_75_80" placeholder="Click to edit" />
               </Td>
             </Tr>,
           )}
