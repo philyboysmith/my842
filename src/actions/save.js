@@ -6,7 +6,7 @@ export function requestPostAnnualReview(clientId, data) {
     type: 'POST_ANNUAL_REVIEW',
     payload: {
       clientId,
-      data
+      data,
     },
   };
 }
@@ -36,25 +36,27 @@ export function postAnnualReview(clientId, data) {
     body: data,
   };
 
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(requestPostAnnualReview());
-    return fetch(`${BASE_URL}clients/${clientId}/annual_review`, config)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        if (response.status === 401 || response.status === 403) {
-          dispatch(emptyStateAndLogoutUser());
-          throw new Error('Invalid credentials');
-        }
-        if (response.status === 402) {
-          throw new Error('Invalid data');
-        }
-        if (response.status === 500) {
-          throw new Error('Server error');
-        }
-      })
-      .then(successData => dispatch(receivePostAnnualReview(successData)))
-      .catch(error => dispatch(errorPostAnnualReview(error)));
+    try {
+      const response = await fetch(`${BASE_URL}clients/${clientId}/annual_review`, config);
+      const { status, ok } = response;
+      if (status === 401 || status === 403) {
+        dispatch(emptyStateAndLogoutUser());
+        throw new Error('Invalid credentials');
+      }
+      if (status === 402) {
+        throw new Error('Invalid data');
+      }
+      if (status === 500) {
+        throw new Error('Server error');
+      }
+      if (ok) {
+        const results = await response.json();
+        dispatch(receivePostAnnualReview(results));
+      }
+    } catch (error) {
+      dispatch(errorPostAnnualReview(error));
+    }
   };
 }
