@@ -17,7 +17,7 @@ function RequiredChanges({ onApproved, onRevision, isApproved }) {
           placeholder="Please detail what changes need to be made"
         />
       </div>
-      <div className="al_list__actions" >
+      <div className="al_list__actions">
         <div><button style={{ color: 'green' }} onClick={onApproved} className="glyphicon glyphicon-ok"> Approved</button></div>
         <div><button style={{ color: 'red' }} onClick={onRevision} className="glyphicon glyphicon-remove"> Requires revision</button></div>
       </div>

@@ -15,7 +15,7 @@ function PropertiesList({ data, postAnnualReview }) {
               <p>{value}</p>
               { notes ? <p>{notes}</p> : '' }
             </div>
-            <RequiredChanges isApproved={approved} onApproved={() => {}} onRevision={() => {}} />
+            <RequiredChanges isApproved={approved} onApproved={() => {}} onRevision={() => postAnnualReview(79)} />
           </li>
       ))}
       </ul>

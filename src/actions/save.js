@@ -31,15 +31,16 @@ export function errorPostAnnualReview(error) {
 
 export function postAnnualReview(clientId, data) {
   const config = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    method: 'PATCH',
+    // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    headers: { 'Content-Type': 'application/json' },
     body: data,
   };
 
   return async (dispatch) => {
     dispatch(requestPostAnnualReview());
     try {
-      const response = await fetch(`${BASE_URL}clients/${clientId}/annual_review`, config);
+      const response = await fetch(`${BASE_URL}clients/${clientId}/annual-review`, config);
       const { status, ok } = response;
       if (status === 401 || status === 403) {
         dispatch(emptyStateAndLogoutUser());
