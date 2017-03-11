@@ -8,6 +8,7 @@ function RequiredChanges({ onApproved, onRevision, isApproved }) {
       </div>
     );
   }
+  let textArea = null;
   return (
     <section>
       <div className="al_list__input hidden">
@@ -15,11 +16,12 @@ function RequiredChanges({ onApproved, onRevision, isApproved }) {
           rows="5"
           className="input-transparent form-control"
           placeholder="Please detail what changes need to be made"
+          ref={(input) => { textArea = input; }}
         />
       </div>
       <div className="al_list__actions">
         <div><button style={{ color: 'green' }} onClick={onApproved} className="glyphicon glyphicon-ok"> Approved</button></div>
-        <div><button style={{ color: 'red' }} onClick={onRevision} className="glyphicon glyphicon-remove"> Requires revision</button></div>
+        <div><button style={{ color: 'red' }} onClick={() => onRevision(textArea.value)} className="glyphicon glyphicon-remove"> Requires revision</button></div>
       </div>
     </section>
   );

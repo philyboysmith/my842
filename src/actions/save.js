@@ -30,10 +30,13 @@ export function errorPostAnnualReview(error) {
 }
 
 export function postAnnualReview(clientId, data) {
+  const token = localStorage.getItem('token') || null;
   const config = {
     method: 'PATCH',
-    // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
     body: data,
   };
 

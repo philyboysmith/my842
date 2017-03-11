@@ -40,7 +40,11 @@ class AnnualReview extends Component {
           <p>Status: <span style={{ color: annualReviewData.status === 'complete' ? 'green' : 'red' }}>{annualReviewData.status}</span></p>
         </TabPanel>
         <TabPanel key="AssetsAndLiabilities" className="tab-content">
-          <AssetsAndLiabilities postAnnualReview={this.props.postAnnualReview} data={annualReviewData.assets_and_liabilities} />
+          <AssetsAndLiabilities
+            clientId={this.props.params.clientID}
+            postAnnualReview={this.props.postAnnualReview}
+            data={annualReviewData.assets_and_liabilities}
+          />
         </TabPanel>
         <TabPanel key="FamilyTree" className="tab-content">
           <FamilyTree data={annualReviewData.family_tree} />

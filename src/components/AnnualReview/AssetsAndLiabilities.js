@@ -6,15 +6,21 @@ import LiquidAssetsList from './AssetsAndLiabilities/LiquidAssetsList';
 import PensionsList from './AssetsAndLiabilities/PensionsList';
 import PropertiesList from './AssetsAndLiabilities/PropertiesList';
 
-function AssetsAndLiabilities({ data, postAnnualReview }) {
+function AssetsAndLiabilities({ clientId, data, postAnnualReview }) {
   return (
     <div>
       <h1>Assets and Liabilities Statement</h1>
-      <PropertiesList postAnnualReview={postAnnualReview} data={data.properties} />
-      <PensionsList data={data.pensions} />
-      <IncomeList data={data.income} />
-      <LiquidAssetsList data={data.liquid_assets} />
-      <CurrentAccountsList data={data.current_accounts} />
+      <PropertiesList
+        clientId={clientId} data={data.properties} postAnnualReview={postAnnualReview}
+      />
+      <PensionsList clientId={clientId} data={data.pensions} postAnnualReview={postAnnualReview} />
+      <IncomeList clientId={clientId} data={data.income} postAnnualReview={postAnnualReview} />
+      <LiquidAssetsList
+        clientId={clientId} data={data.liquid_assets} postAnnualReview={postAnnualReview}
+      />
+      <CurrentAccountsList
+        clientId={clientId} data={data.current_accounts} postAnnualReview={postAnnualReview}
+      />
     </div>
   );
 }
@@ -28,6 +34,7 @@ AssetsAndLiabilities.propTypes = {
     current_accounts: React.PropTypes.array,
   }).isRequired,
   postAnnualReview: React.PropTypes.func.isRequired,
+  clientId: React.PropTypes.string.isRequired,
 };
 
 export default AssetsAndLiabilities;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import RequiredChanges from './RequiredChanges';
 
-function PropertiesList({ data, postAnnualReview }) {
+function PropertiesList({ clientId, data, postAnnualReview }) {
   return (
     <div>
       <h2>Properties</h2>
@@ -15,7 +15,12 @@ function PropertiesList({ data, postAnnualReview }) {
               <p>{value}</p>
               { notes ? <p>{notes}</p> : '' }
             </div>
-            <RequiredChanges isApproved={approved} onApproved={() => {}} onRevision={() => postAnnualReview(79)} />
+            <RequiredChanges
+              isApproved={approved}
+              onApproved={() => postAnnualReview(clientId, JSON.stringify({ uid, approved: true }))}
+              onRevision={notesText =>
+                postAnnualReview(clientId, JSON.stringify({ uid, notes: notesText }))}
+            />
           </li>
       ))}
       </ul>
@@ -33,6 +38,7 @@ PropertiesList.propTypes = {
     value: React.PropTypes.number,
   })).isRequired,
   postAnnualReview: React.PropTypes.func.isRequired,
+  clientId: React.PropTypes.string.isRequired,
 };
 
 export default PropertiesList;

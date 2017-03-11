@@ -2,7 +2,7 @@ import React from 'react';
 
 import RequiredChanges from './RequiredChanges';
 
-function LiquidAssetsList({ data }) {
+function LiquidAssetsList({ clientId, data, postAnnualReview }) {
   return (
     <div>
       <h2>Liquid Assets</h2>
@@ -15,7 +15,12 @@ function LiquidAssetsList({ data }) {
               <p>{value}</p>
               { notes ? <p>{notes}</p> : '' }
             </div>
-            <RequiredChanges isApproved={approved} onApproved={() => {}} onRevision={() => {}} />
+            <RequiredChanges
+              isApproved={approved}
+              onApproved={() => postAnnualReview(clientId, JSON.stringify({ uid, approved: true }))}
+              onRevision={notesText =>
+                postAnnualReview(clientId, JSON.stringify({ uid, notes: notesText }))}
+            />
           </li>
           ))}
       </ul>
@@ -32,6 +37,8 @@ LiquidAssetsList.propTypes = {
     uid: React.PropTypes.string,
     value: React.PropTypes.number,
   })).isRequired,
+  postAnnualReview: React.PropTypes.func.isRequired,
+  clientId: React.PropTypes.string.isRequired,
 };
 
 export default LiquidAssetsList;
