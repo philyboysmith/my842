@@ -40,7 +40,7 @@ export function postAnnualReview(clientId, data) {
   return async (dispatch) => {
     dispatch(requestPostAnnualReview());
     try {
-      const response = await fetch(`${BASE_URL}clients/${clientId}/annual-review`, config);
+      const response = await fetch(`${BASE_URL}clients/${clientId}/annual_review`, config);
       const { status, ok } = response;
       if (status === 401 || status === 403) {
         dispatch(emptyStateAndLogoutUser());
