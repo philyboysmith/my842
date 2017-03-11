@@ -2,7 +2,6 @@ import {
   requestPostAnnualReview,
   receivePostAnnualReview,
   errorPostAnnualReview,
-  postAnnualReview,
 } from './save';
 
 describe('(action creator) requestPostAnnualReview', () => {
