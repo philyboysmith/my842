@@ -16,9 +16,9 @@ function IncomeList({ clientId, data, postAnnualReview }) {
           </div>
           <RequiredChanges
             isApproved={approved}
-            onApproved={() => postAnnualReview(clientId, JSON.stringify({ uid, approved: true }))}
+            onApproved={() => postAnnualReview(clientId, JSON.stringify({ approved: true }))}
             onRevision={notesText =>
-              postAnnualReview(clientId, JSON.stringify({ uid, notes: notesText }))}
+              postAnnualReview(clientId, JSON.stringify({ notes: notesText }))}
           />
         </li>
       </ul>
