@@ -4,6 +4,9 @@ import RequiredChanges from './RequiredChanges';
 
 function IncomeList({ clientId, data, postAnnualReview }) {
   const { approved, name, notes, value } = data;
+
+  console.log(clientId);
+  console.log(data);
   return (
     <div>
       <h2>Income</h2>

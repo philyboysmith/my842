@@ -1,5 +1,7 @@
 function annualReview(state = {}, action) {
   switch (action && action.type) {
+    case 'POST_ANNUAL_REVIEW_SUCCESS':
+      return Object.assign({}, state, { data: action.payload.data });
     case 'ANNUAL_REVIEW_SUCCESS':
       return Object.assign({}, state, { data: action.response });
     case 'RESET_STATE':

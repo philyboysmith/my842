@@ -23,4 +23,14 @@ describe('annualReview reducer', () => {
     });
     expect(actual).toEqual(expected);
   });
+  it('should populate on a post success', () => {
+    const expected = {
+      data: { test: 'test' },
+    };
+    const actual = annualReview({}, {
+      type: 'POST_ANNUAL_REVIEW_SUCCESS',
+      payload: { data: { test: 'test' } },
+    });
+    expect(actual).toEqual(expected);
+  });
 });
